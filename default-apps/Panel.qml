@@ -22,6 +22,15 @@ Item {
   // null: category list, otherwise the category whose apps are shown
   property var selectedCategory: null
 
+  // App list: search text and how many matches are shown ("Show more" adds 5)
+  readonly property int pageSize: 5
+  property int shownCount: pageSize
+
+  onSelectedCategoryChanged: {
+    searchInput.text = "";
+    shownCount = pageSize;
+  }
+
   Component.onCompleted: mainInstance?.refresh()
 
   Rectangle {
@@ -193,15 +202,41 @@ Item {
           }
         }
 
+        NTextInput {
+          id: searchInput
+          visible: root.selectedCategory !== null
+          Layout.fillWidth: true
+          inputIconName: "search"
+          placeholderText: "Search apps"
+          onTextChanged: root.shownCount = root.pageSize
+        }
+
         // App list for the selected category
         ListView {
+          id: appList
           visible: root.selectedCategory !== null
           Layout.fillWidth: true
           Layout.fillHeight: true
           clip: true
           spacing: Style.marginXS
           boundsBehavior: Flickable.StopAtBounds
-          model: (mainInstance && root.selectedCategory) ? (mainInstance.apps, mainInstance.candidates(root.selectedCategory)) : []
+          model: matches.slice(0, root.shownCount)
+
+          readonly property var matches: {
+            if (!mainInstance || !root.selectedCategory)
+              return [];
+            const all = (mainInstance.apps, mainInstance.candidates(root.selectedCategory));
+            const q = searchInput.text.trim().toLowerCase();
+            return q === "" ? all : all.filter(a => a.name.toLowerCase().includes(q) || a.key.toLowerCase().includes(q));
+          }
+
+          footer: NButton {
+            visible: appList.matches.length > root.shownCount
+            height: visible ? implicitHeight : 0
+            text: "Show more (" + (appList.matches.length - root.shownCount) + " more)"
+            outlined: true
+            onClicked: root.shownCount += root.pageSize
+          }
 
           readonly property string currentId: (mainInstance && root.selectedCategory) ? (mainInstance.defaults, mainInstance.terminal, mainInstance.current(root.selectedCategory)) : ""
 
@@ -252,7 +287,9 @@ Item {
           NText {
             anchors.centerIn: parent
             visible: parent.count === 0
-            text: (mainInstance?.loading ?? false) ? "Loading..." : "No installed app supports this"
+            text: (mainInstance?.loading ?? false) ? "Loading..."
+                  : searchInput.text.trim() !== "" ? "No app matches the search"
+                  : "No installed app supports this"
             pointSize: Style.fontSizeM
             color: Color.mOnSurfaceVariant
           }

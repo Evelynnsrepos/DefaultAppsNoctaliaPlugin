@@ -4,7 +4,7 @@
     {
       "id": "default-apps",
       "name": "Default Apps",
-      "version": "0.3.0",
+      "version": "0.3.1",
       "official": false,
       "author": "evilynn",
       "description": "Choose default apps (browser, file manager, terminal, editor, viewers, ...) in a way Dolphin/KDE, GTK, xdg-open and the desktop portal all follow.",
