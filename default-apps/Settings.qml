@@ -80,7 +80,7 @@ ColumnLayout {
 
       NComboBox {
         Layout.fillWidth: true
-        minimumWidth: 0
+        minimumWidth: 220
         label: modelData.label
         // the comma expressions make these re-evaluate when the scan results change
         description: mainInstance ? (mainInstance.defaults, mainInstance.apps, mainInstance.terminal, mainInstance.status(modelData)) : ""

@@ -1,7 +1,7 @@
 {
   "id": "default-apps",
   "name": "Default Apps",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "minNoctaliaVersion": "4.6.6",
   "author": "evilynn",
   "license": "MIT",
