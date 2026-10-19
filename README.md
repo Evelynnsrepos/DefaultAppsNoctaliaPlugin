@@ -41,21 +41,25 @@ PDF, archives and email.
 
 ## Install
 
-```sh
-git clone https://github.com/Evelynnsrepos/DefaultAppsNoctaliaPlugin \
-  ~/.config/noctalia/plugins/default-apps
+This repo is a Noctalia plugin source. In Settings → Plugins → Sources, add
+
+```
+https://github.com/Evelynnsrepos/DefaultAppsNoctaliaPlugin
 ```
 
-(or clone anywhere and symlink it to `~/.config/noctalia/plugins/default-apps`).
-Restart Noctalia (it scans the plugin folder at startup), enable **Default Apps** in
-Settings → Plugins and open its settings (gear icon).
+then install and enable **Default Apps** from the plugin list and open its settings
+(gear icon).
+
+Manual install: copy or symlink the `default-apps/` folder of this repo to
+`~/.config/noctalia/plugins/default-apps` and restart Noctalia (it scans the plugin
+folder at startup).
 
 Recommended: `xdg-terminal-exec` (terminal for GLib apps) and `kbuildsycoca6`
 (from KDE's kservice; refreshes KDE apps right away).
 
 ## Command line
 
-`defaultapps.sh` does the work and can be used on its own:
+`default-apps/defaultapps.sh` does the work and can be used on its own:
 
 ```sh
 defaultapps.sh scan text/plain image/png        # apps + current defaults
