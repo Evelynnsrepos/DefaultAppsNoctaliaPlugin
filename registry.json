@@ -4,13 +4,17 @@
     {
       "id": "default-apps",
       "name": "Default Apps",
-      "version": "0.2.1",
+      "version": "0.3.0",
       "official": false,
       "author": "evilynn",
       "description": "Choose default apps (browser, file manager, terminal, editor, viewers, ...) in a way Dolphin/KDE, GTK, xdg-open and the desktop portal all follow.",
       "repository": "https://github.com/Evelynnsrepos/DefaultAppsNoctaliaPlugin",
       "license": "MIT",
-      "tags": ["Utility"],
+      "tags": [
+        "Bar",
+        "Panel",
+        "Utility"
+      ],
       "minNoctaliaVersion": "4.6.6",
       "lastUpdated": "2026-10-19T00:00:00+02:00"
     }

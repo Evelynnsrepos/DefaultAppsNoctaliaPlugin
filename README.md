@@ -1,7 +1,7 @@
 # Default Apps for Noctalia
 
 A [Noctalia](https://github.com/noctalia-dev/noctalia-shell) plugin to choose your
-default apps from Noctalia's settings, in a way that Dolphin and other KDE apps, GTK
+default apps from a panel in Noctalia's bar, in a way that Dolphin and other KDE apps, GTK
 apps, `xdg-open` and the desktop portal (and so Flatpaks) all follow. Made for
 setups without a full desktop environment, e.g. niri + Noctalia + Dolphin.
 
@@ -47,8 +47,8 @@ This repo is a Noctalia plugin source. In Settings → Plugins → Sources, add
 https://github.com/Evelynnsrepos/DefaultAppsNoctaliaPlugin
 ```
 
-then install and enable **Default Apps** from the plugin list and open its settings
-(gear icon).
+then install and enable **Default Apps** from the plugin list. Add its widget to the
+bar (Settings → Bar), click the icon, pick a category and then the app.
 
 Manual install: copy or symlink the `default-apps/` folder of this repo to
 `~/.config/noctalia/plugins/default-apps` and restart Noctalia (it scans the plugin
