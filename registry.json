@@ -17,6 +17,23 @@
       ],
       "minNoctaliaVersion": "4.6.6",
       "lastUpdated": "2026-10-19T00:00:00+02:00"
+    },
+    {
+      "id": "dropdown-test",
+      "name": "Dropdown Test",
+      "version": "0.1.0",
+      "official": false,
+      "author": "evilynn",
+      "description": "Debug helper: drop-downs and popups in a panel and in the settings page, with a live event log and path info.",
+      "repository": "https://github.com/Evelynnsrepos/DefaultAppsNoctaliaPlugin",
+      "license": "MIT",
+      "tags": [
+        "Bar",
+        "Panel",
+        "Utility"
+      ],
+      "minNoctaliaVersion": "4.6.6",
+      "lastUpdated": "2026-10-19T00:00:00+02:00"
     }
   ]
 }

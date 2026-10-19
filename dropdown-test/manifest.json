@@ -1,0 +1,26 @@
+{
+  "id": "dropdown-test",
+  "name": "Dropdown Test",
+  "version": "0.1.0",
+  "minNoctaliaVersion": "4.6.6",
+  "author": "evilynn",
+  "license": "MIT",
+  "repository": "https://github.com/Evelynnsrepos/DefaultAppsNoctaliaPlugin",
+  "description": "Debug helper: drop-downs and popups in a panel and in the settings page, with a live event log and path info.",
+  "tags": [
+    "Bar",
+    "Panel",
+    "Utility"
+  ],
+  "entryPoints": {
+    "barWidget": "BarWidget.qml",
+    "panel": "Panel.qml",
+    "settings": "Settings.qml"
+  },
+  "dependencies": {
+    "plugins": []
+  },
+  "metadata": {
+    "defaultSettings": {}
+  }
+}
